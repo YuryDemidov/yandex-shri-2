@@ -12,7 +12,7 @@ export default function prepareChartData(currentSprint, sprints, commits, prepar
     const sprintData = {
       title: `${sprint.id}`,
       hint: sprint.name,
-      value: `${totalCommits}`
+      value: totalCommits
     }
 
     if (sprint === currentSprint) {

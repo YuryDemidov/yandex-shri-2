@@ -4,7 +4,7 @@ function declOfNum(number, words) {
 }
 
 function declCommitsPhrase(number) {
-  return `${number >= 0 ? `+` : ``}${number} ${declOfNum(number, [
+  return `${number > 0 ? `+` : ``}${number} ${declOfNum(number, [
     `коммит`, `коммита`, `коммитов`
   ])}`
 }
@@ -113,7 +113,7 @@ function prepareChartData(currentSprint, sprints, commits, preparedLeaders) {
     const sprintData = {
       title: `${sprint.id}`,
       hint: sprint.name,
-      value: `${totalCommits}`
+      value: totalCommits
     }
 
     if (sprint === currentSprint) {
