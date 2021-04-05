@@ -72,7 +72,7 @@ function prepareData(data, { sprintId }) {
 function init() {
   getData()
     .then(data => {
-      output.innerHTML = JSON.stringify(prepareData(data, { sprintId: 959 }), null, 4)
+      output.innerHTML = JSON.stringify(prepareData(data, { sprintId: 977 }), null, 4)
     });
 }
 

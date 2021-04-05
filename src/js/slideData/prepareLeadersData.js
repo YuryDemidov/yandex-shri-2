@@ -17,7 +17,14 @@ export default function prepareLeadersData(sprint, users, usersCommits) {
     }
   });
 
-  preparedUsers.sort((a, b) => parseInt(b.valueText) - parseInt(a.valueText));
+  preparedUsers.sort((a, b) => {
+    const difference = parseInt(b.valueText) - parseInt(a.valueText);
+    if (difference) {
+      return difference;
+    } else {
+      return parseInt(a.id) - parseInt(b.id);
+    }
+  });
 
   return {
     alias: `leaders`,
