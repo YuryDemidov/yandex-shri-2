@@ -22,7 +22,7 @@ export default function prepareLeadersData(sprint, users, usersCommits) {
     if (difference) {
       return difference;
     } else {
-      return parseInt(a.id) - parseInt(b.id);
+      return a.name < b.name ? -1 : 1;
     }
   });
 
