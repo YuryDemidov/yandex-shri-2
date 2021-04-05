@@ -10,16 +10,12 @@ npm i --legacy-peer-deps
 
 - Build project:
 
-For development build (hot module replacement, unminified code, source maps) run:
+For build run:
 ```
 npm run dev
 ```
-For production build (minified production bundle with its analysis) run:
-```
-npm run prod
-```
 
-- Start webpack dev server with
+- Start express JS server (for testing)
 ```
 npm start
 ```
