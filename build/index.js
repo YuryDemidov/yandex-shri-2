@@ -168,22 +168,22 @@ function prepareDiagramData(currentSprint, previousSprint, commits, summarySizes
         {
           title: `> 1001 строки`,
           valueText: declCommitsPhrase(currentSprintCommitsInfo[`>1000`]),
-          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`>1000`] - previousSprintCommitsInfo[`>1000`])
+          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`>1000`] - previousSprintCommitsInfo[`>1000`], true)
         },
         {
           title: `501 — 1000 строк`,
           valueText: declCommitsPhrase(currentSprintCommitsInfo[`501-1000`]),
-          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`501-1000`] - previousSprintCommitsInfo[`501-1000`])
+          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`501-1000`] - previousSprintCommitsInfo[`501-1000`], true)
         },
         {
           title: `101 — 500 строк`,
           valueText: declCommitsPhrase(currentSprintCommitsInfo[`101-500`]),
-          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`101-500`] - previousSprintCommitsInfo[`101-500`])
+          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`101-500`] - previousSprintCommitsInfo[`101-500`], true)
         },
         {
           title: `1 — 100 строк`,
           valueText: declCommitsPhrase(currentSprintCommitsInfo[`1-100`]),
-          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`1-100`] - previousSprintCommitsInfo[`1-100`])
+          differenceText: declCommitsPhrase(currentSprintCommitsInfo[`1-100`] - previousSprintCommitsInfo[`1-100`], true)
         }
       ]
     }
