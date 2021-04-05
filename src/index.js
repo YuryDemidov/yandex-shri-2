@@ -60,9 +60,6 @@ function prepareData(data, { sprintId }) {
 
   const preparedLeaders = prepareLeadersData(currentSprint, users, usersCommits);
 
-  console.log(prepareChartData(currentSprint, sprints, commits, preparedLeaders.data.users).data)
-  console.log(prepareDiagramData(currentSprint, previousSprint, commits, summarySizes).data)
-
   return [
     prepareVoteData(currentSprint, users, usersComments),
     preparedLeaders,
@@ -75,7 +72,7 @@ function prepareData(data, { sprintId }) {
 function init() {
   getData()
     .then(data => {
-      output.innerHTML = JSON.stringify(prepareData(data, { sprintId: 977 }), null, 4)
+      output.innerHTML = JSON.stringify(prepareData(data, { sprintId: 991 }), null, 4)
     });
 }
 
