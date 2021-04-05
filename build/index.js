@@ -150,7 +150,7 @@ function prepareDiagramData(currentSprint, previousSprint, commits, summarySizes
 
     if (isCommitInSprint(currentSprint, commit)) {
       updateSprintCommitsInfo(currentSprint, currentSprintCommitsInfo, summarySizes, commit);
-    } else if (isCommitInSprint(previousSprint, commit)) {
+    } else if (previousSprint && isCommitInSprint(previousSprint, commit)) {
       updateSprintCommitsInfo(previousSprint, previousSprintCommitsInfo, summarySizes, commit);
     }
   }

@@ -59,7 +59,7 @@ function prepareData(data, { sprintId }) {
   }
 
   const preparedLeaders = prepareLeadersData(data, currentSprint, users, usersCommits);
-
+  console.log(sprints);
   return [
     prepareVoteData(currentSprint, users, usersComments),
     preparedLeaders,
@@ -72,7 +72,7 @@ function prepareData(data, { sprintId }) {
 function init() {
   getData()
     .then(data => {
-      output.innerHTML = JSON.stringify(prepareData(data, { sprintId: 977 }), null, 4)
+      output.innerHTML = JSON.stringify(prepareData(data, { sprintId: 966 }), null, 4)
     });
 }
 

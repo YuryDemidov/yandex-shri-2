@@ -21,10 +21,9 @@ export default function prepareDiagramData(currentSprint, previousSprint, commit
 
   for (let i = 0; i < commits.length; i++) {
     const commit = commits[i];
-
     if (isCommitInSprint(currentSprint, commit)) {
       updateSprintCommitsInfo(currentSprint, currentSprintCommitsInfo, summarySizes, commit);
-    } else if (isCommitInSprint(previousSprint, commit)) {
+    } else if (previousSprint && isCommitInSprint(previousSprint, commit)) {
       updateSprintCommitsInfo(previousSprint, previousSprintCommitsInfo, summarySizes, commit);
     }
   }
