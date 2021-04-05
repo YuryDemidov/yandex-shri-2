@@ -155,6 +155,8 @@ function prepareDiagramData(currentSprint, previousSprint, commits, summarySizes
     }
   }
 
+  const difference = currentSprintCommitsInfo.total - previousSprintCommitsInfo.total;
+
   return {
     alias: `diagram`,
     data: {
@@ -163,7 +165,7 @@ function prepareDiagramData(currentSprint, previousSprint, commits, summarySizes
       totalText: `${currentSprintCommitsInfo.total} ${declOfNum(currentSprintCommitsInfo.total, [
         `коммит`, `коммита`, `коммитов`
       ])}`,
-      differenceText: `${currentSprintCommitsInfo.total - previousSprintCommitsInfo.total} с прошлого спринта`,
+      differenceText: `${difference >= 0 ? `+${difference}` : difference} с прошлого спринта`,
       categories: [
         {
           title: `> 1001 строки`,

@@ -29,6 +29,8 @@ export default function prepareDiagramData(currentSprint, previousSprint, commit
     }
   }
 
+  const difference = currentSprintCommitsInfo.total - previousSprintCommitsInfo.total;
+
   return {
     alias: `diagram`,
     data: {
@@ -37,7 +39,7 @@ export default function prepareDiagramData(currentSprint, previousSprint, commit
       totalText: `${currentSprintCommitsInfo.total} ${declOfNum(currentSprintCommitsInfo.total, [
         `коммит`, `коммита`, `коммитов`
       ])}`,
-      differenceText: `${currentSprintCommitsInfo.total - previousSprintCommitsInfo.total} с прошлого спринта`,
+      differenceText: `${difference >= 0 ? `+${difference}` : difference} с прошлого спринта`,
       categories: [
         {
           title: `> 1001 строки`,

@@ -60,8 +60,6 @@ function prepareData(data, { sprintId }) {
 
   const preparedLeaders = prepareLeadersData(currentSprint, users, usersCommits);
 
-  console.log(prepareDiagramData(currentSprint, previousSprint, commits, summarySizes).data);
-
   return [
     prepareVoteData(currentSprint, users, usersComments),
     preparedLeaders,
