@@ -1,0 +1,54 @@
+{
+  "name": "yandex-shri-2",
+  "version": "1.0.0",
+  "description": "The second test task for the Yandex developers school",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rm -rf build && cross-env NODE_ENV=development webpack --config webpack/server.config.js && cross-env NODE_ENV=development webpack --config webpack/dev.config.js",
+    "start": "node ./build/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuryDemidov/yandex-shri-2.git"
+  },
+  "author": "Yury Demidov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuryDemidov/yandex-shri-2/issues"
+  },
+  "homepage": "https://github.com/YuryDemidov/yandex-shri-2#readme",
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": ">=14.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-webpack-plugin": "^2.5.2",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mocha": "^8.3.2",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.27.1",
+    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^5.7.3",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
