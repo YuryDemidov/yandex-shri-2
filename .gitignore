@@ -3,7 +3,8 @@
 .idea
 .vscode
 
-# Vendors
+# Vendors and dist
+dist
 vendor
 node_modules
 

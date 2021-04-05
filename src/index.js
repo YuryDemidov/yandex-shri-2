@@ -13,7 +13,6 @@ function prepareData(data, { sprintId }) {
   const usersCommits = {};
   const sprints = [];
   const commits = [];
-  const summaries = [];
   const summarySizes = {};
   let currentSprint;
   let previousSprint;
@@ -55,9 +54,7 @@ function prepareData(data, { sprintId }) {
 
     if (entity.type === `Summary`) {
       const summary = entity;
-      const commitSize = summary.added + summary.removed;
-      summarySizes[summary.id] = commitSize;
-      summaries.push(summary);
+      summarySizes[summary.id] = summary.added + summary.removed;
     }
   }
 
