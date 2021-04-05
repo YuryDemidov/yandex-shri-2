@@ -4,7 +4,7 @@ function declOfNum(number, words) {
 }
 
 function declCommitsPhrase(number) {
-  return `${number} ${declOfNum(number, [
+  return `${number >= 0 ? `+` : ``}${number} ${declOfNum(number, [
     `коммит`, `коммита`, `коммитов`
   ])}`
 }
@@ -64,7 +64,7 @@ function prepareVoteData(sprint, users, usersComments) {
   };
 }
 
-function prepareLeadersData(data, sprint, users, usersCommits) {
+function prepareLeadersData(sprint, users, usersCommits) {
   const preparedUsers = users.map(user => {
     const userCommitsNumber = usersCommits[user.id].reduce((quantity, commit) => {
       if (isCommitInSprint(sprint, commit)) {
@@ -274,7 +274,7 @@ function prepareData(data, { sprintId }) {
     }
   }
 
-  const preparedLeaders = prepareLeadersData(data, currentSprint, users, usersCommits);
+  const preparedLeaders = prepareLeadersData(currentSprint, users, usersCommits);
 
   return [
     prepareVoteData(currentSprint, users, usersComments),

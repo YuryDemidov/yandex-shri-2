@@ -1,6 +1,6 @@
 import isCommitInSprint from '../partial/isCommitInSprint';
 
-export default function prepareLeadersData(data, sprint, users, usersCommits) {
+export default function prepareLeadersData(sprint, users, usersCommits) {
   const preparedUsers = users.map(user => {
     const userCommitsNumber = usersCommits[user.id].reduce((quantity, commit) => {
       if (isCommitInSprint(sprint, commit)) {
