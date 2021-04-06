@@ -81,7 +81,9 @@ function prepareLeadersData(sprint, users, usersCommits) {
     }
   });
 
-  preparedUsers.sort((a, b) => parseInt(b.valueText) - parseInt(a.valueText));
+  preparedUsers.sort((user1, user2) => {
+    return parseInt(user2.valueText) - parseInt(user1.valueText) || parseInt(user1.id) - parseInt(user2.id);
+  });
 
   return {
     alias: `leaders`,
