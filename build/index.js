@@ -65,7 +65,7 @@ function prepareVoteData(sprint, users, usersComments) {
 }
 
 function prepareLeadersData(sprint, users, usersCommits) {
-  const preparedUsers = users.map(user => {
+  let preparedUsers = users.map(user => {
     const userCommitsNumber = usersCommits[user.id].reduce((quantity, commit) => {
       if (isCommitInSprint(sprint, commit)) {
         quantity++;
@@ -81,9 +81,11 @@ function prepareLeadersData(sprint, users, usersCommits) {
     }
   });
 
-  preparedUsers.sort((user1, user2) => {
-    return parseInt(user2.valueText) - parseInt(user1.valueText) || parseInt(user1.id) - parseInt(user2.id);
-  });
+  preparedUsers = preparedUsers
+    .sort((user1, user2) => {
+      return parseInt(user2.valueText) - parseInt(user1.valueText) || parseInt(user1.id) - parseInt(user2.id);
+    })
+    .filter(user => user.valueText !== `0`);
 
   return {
     alias: `leaders`,
